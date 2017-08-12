@@ -9,6 +9,7 @@
     'app': 'app', // 'dist',
 
     '@angular': 'node_modules/@angular',
+    '@ng-bootstrap/ng-bootstrap': 'node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js',
     'rxjs': 'node_modules/rxjs'
   };
 
