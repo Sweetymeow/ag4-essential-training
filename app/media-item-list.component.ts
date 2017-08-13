@@ -6,7 +6,8 @@ import { MediaService } from './service/media.service';
 @Component({
   selector: 'mw-media-item-list',
   templateUrl: 'app/media-item-list.component.html',
-  styleUrls: ['app/media-item-list.component.css']
+  styleUrls: ['app/media-item-list.component.css'],
+  providers: [ MediaService ]
 })
 export class MediaItemListComponent {
 
