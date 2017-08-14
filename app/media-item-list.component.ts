@@ -9,6 +9,7 @@ import { MediaService } from './service/media.service';
   styleUrls: ['app/media-item-list.component.css'],
   providers: [ MediaService ]
 })
+
 export class MediaItemListComponent {
 
     mediaItems : media[];

@@ -7,6 +7,7 @@ import { MediaItemListComponent } from './media-item-list.component';
 import { FavoriteDirective } from './favorite.directive';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryListPipe } from './service/category-list.pipe';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     MediaItemComponent,
     MediaItemListComponent,
-    FavoriteDirective
+    FavoriteDirective,
+    CategoryListPipe
   ],
   bootstrap: [
     AppComponent
