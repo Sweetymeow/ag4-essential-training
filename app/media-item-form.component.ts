@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'media-item-form',
-  templateUrl: 'media-item-form.component.html',
+  selector: 'mw-media-item-form',
+  templateUrl: 'app/media-item-form.component.html',
   styleUrls: ['app/media-item-form.component.css']
 })
-export class nameComponent implements OnInit {
+
+export class MwMediaItemFormComponent {
   constructor() {  }
 
-  ngOnInit() {}
+  onSubmit(mediaForm){
+    console.log(mediaForm);
+  }
 }

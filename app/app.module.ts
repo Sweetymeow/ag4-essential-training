@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './media-item.component';
 import { MediaItemListComponent } from './media-item-list.component';
+import { MwMediaItemFormComponent } from './media-item-form.component';
+
 import { FavoriteDirective } from './favorite.directive';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +22,7 @@ import { CategoryListPipe } from './service/category-list.pipe';
     AppComponent,
     MediaItemComponent,
     MediaItemListComponent,
+    MwMediaItemFormComponent,
     FavoriteDirective,
     CategoryListPipe
   ],
