@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+// Model-driven: ReactiveFormsModule, Template-driven: FormsModule
 
 import { AppComponent } from './app.component';
 import { MediaItemComponent } from './media-item.component';
@@ -15,6 +16,7 @@ import { CategoryListPipe } from './service/category-list.pipe';
 @NgModule({
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule.forRoot()
   ],
