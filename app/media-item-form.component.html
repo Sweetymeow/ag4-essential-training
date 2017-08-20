@@ -31,5 +31,6 @@
       <input type="text" name="year" id="year" maxlength="4" formControlName="year">
     </li>
   </ul>
-  <button type="submit" [disabled]="!form">Save</button>
+  <button type="submit" [disabled]="!mdForm.valid" >Save</button>
+  <!--  " -->
 </form>
