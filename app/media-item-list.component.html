@@ -2,6 +2,9 @@
   <div>Category List(Custom Pipe): <b>{{ mediaItems | categoryList }}</b></div>
   <br>
 </header>
+<!-- <header [ngClass]="{'medium-movies':medium === 'Movies', 'medium-series':medium === 'Series'}">
+    <h2>{{medium}}</h2>
+</header> -->
 <section>
   <mw-media-item
     [ngClass]="{'medium-movies': mediaItem.medium==='Movies', 'medium-series':mediaItem.medium==='Series'}"
@@ -9,3 +12,8 @@
     [mediaItem]="mediaItem"
     (delete)="onMediaItemDelete($event)"></mw-media-item>
 </section>
+<footer>
+  <a routerLink="/add">
+    <img src="media/01.png" class="icon" />
+  </a>
+</footer>

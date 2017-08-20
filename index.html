@@ -1,6 +1,6 @@
 <html>
-
 <head>
+  <base href="/">
   <title>MeWL</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,10 @@
     }
   </style>
   <script>
-        System.import('app').catch(function(err){ console.error(err); });
-    </script>
+    System.import('app').catch(function(err) {
+      console.error(err);
+    });
+  </script>
 </head>
 
 <body>

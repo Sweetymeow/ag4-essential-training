@@ -1,6 +1,7 @@
 <h2>{{ mediaItem.name | slice: 0: 12 | uppercase }}</h2>
 <template [ngIf]="mediaItem.watchedOn">
   <div>Watched on {{ mediaItem.watchedOn | date: 'MM/dd/yy' }}</div>
+  <!-- <div>Watched on {{ mediaItem.watchedOn | date: 'shortDate' }}</div> -->
 </template>
 <div>{{ mediaItem.category }}</div>
 <div>{{ mediaItem.year }}</div>
