@@ -33,7 +33,11 @@ export class MwMediaItemFormComponent {
     if(year >= minYear && year <= maxYear){
       return null;
     }else{ // message for error
-      return { 'year': true };
+      // return { 'year': true };
+      return { 'year': {
+        min: minYear,
+        max: maxYear
+      } };
     }
   }
 
