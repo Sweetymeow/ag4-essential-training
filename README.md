@@ -1,6 +1,6 @@
-# Angular 2 Essential Training
+# Ag4-essential-training
 
-This is the repository for my course, [Angular 2 Essential Training](https://www.lynda.com/AngularJS-tutorials/AngularJS-2-Essential-Training/422834-2.html). 
+This is the repository of Practice project for LYNDA course, [Angular 2 Essential Training](https://www.lynda.com/AngularJS-tutorials/AngularJS-2-Essential-Training/422834-2.html).
 The full course is available at [lynda.com](https://lynda.com).  
 
 ## Course Description
@@ -24,18 +24,18 @@ Topics include:
   - [node.js](http://nodejs.org/)
   - [git](http://git-scm.com/)
 
-2. Clone this repository into your local machine using the terminal (mac) or Gitbash (PC) 
+2. Clone this repository into your local machine using the terminal (mac) or Gitbash (PC)
 
     `git clone https://github.com/LyndaExerciseFiles/angular2-essential-training.git`
-    
+
 3. CD to the folder
 
     `cd angular2-essential-training`
-    
+
 4. Run the following to install the project dependencies:
 
     `npm install`
-    
+
 5. Run the npm start command to build the code, watch for file changes, and serve up the site locally:
 
     `npm start`
@@ -45,9 +45,9 @@ The repository has a branch for each video starting point. For example, the bran
 Note that the site will run using `lite-server` and will be served up at the following local address:  
     http://localhost:3000
 
-*If you use a code editor that launches its own web server please note that it may run on a different port number. 
+*If you use a code editor that launches its own web server please note that it may run on a different port number.
 You will want to use `npm start` for this project.*
-  
+
 ## More Stuff
-Check out some of my [other courses on lynda.com](https://lynda.com/justinschwartzenberger). 
+Check out some of my [other courses on lynda.com](https://lynda.com/justinschwartzenberger).
 You can also [follow me on twitter](https://twitter.com/schwarty), or read [my blog](http://schwarty.com).
