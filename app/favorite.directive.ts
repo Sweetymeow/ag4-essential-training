@@ -13,7 +13,8 @@ export class FavoriteDirective {
   @HostListener('mouseleave') onMouseLeave(){
     this.hovering = false;
   }
-  @Input() set mwFavorite(value) {
+
+  @Input() set mwFavorite(value: boolean) {
     this.isFavorite = value; // value receive from setter method
   }
 }

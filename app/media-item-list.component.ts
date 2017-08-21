@@ -14,8 +14,8 @@ import { MediaItemService } from './service/media-item.service';
 
 export class MediaItemListComponent {
   medium = '';
-  mediaItems = [];
-  paramsSubscription;
+  mediaItems : media[] = [];
+  paramsSubscription:any;
   myFarItem: media;
 
   constructor(private mediaService : MediaService){}

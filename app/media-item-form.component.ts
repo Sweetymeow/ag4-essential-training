@@ -32,7 +32,7 @@ export class MwMediaItemFormComponent {
     });
   } // OPTION 2 / 3
 
-  yearValidator(control){
+  yearValidator(control:any){
     if(control.value.trim().length === 0){
       // check if the value's empty return null - Valid
       return null;
@@ -52,7 +52,7 @@ export class MwMediaItemFormComponent {
     }
   }
 
-  onSubmit(mediaForm){
+  onSubmit(mediaForm : FormGroup){
     console.log(mediaForm);
   }
 }

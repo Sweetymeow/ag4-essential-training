@@ -7,31 +7,26 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MediaItemService {
-  constructor(private http: Http) {}
   mediaItems: media[] = mediaItems;
 
-  get() { // get(medium){
+  get() {
     return this.mediaItems;
   }
 
   add(mediaItem : media) {
-    return this.http.post('mediaitems', mediaItem).map(response => {});
+    this.mediaItems.push(mediaItem);
   }
 
-  delete(mediaItem : media) {
+  delete(mediaItem: media) {
     let index = this.mediaItems.indexOf(mediaItem);
     if( index >= 0 ){
       this.mediaItems.splice(index, 1);
     }
-    //return this.http.delete(`mediaitems/${mediaItem.id}`).map(response => {});
+    // return this.http.delete(`mediaitems/${mediaItem.id}`).map(response => {});
   }
 
-    // get(medium){
-    // let searchParams = new URLSearchParams();
-    // searchParams.append('medium', medium);
-    // return this.http.get('mediaitems', { search: searchParams })
-    //   .map(response => {
-    //     return response.json().mediaItems;
-    //   });
-    //}
+  // getMediaItemData() :void{
+  //   this.mediaService.getMediaItems()
+  //     .then(items => this.mediaItems = items);
+  // }
 }

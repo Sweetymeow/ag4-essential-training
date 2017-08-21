@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
+    "module": "system",
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [ "es2016", "dom" ],
-    "noImplicitAny": true,
+    "removeComments": false,
+    "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true
   }
 }
