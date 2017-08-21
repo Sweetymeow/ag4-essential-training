@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { media } from './data/media';
 import { MediaService } from './service/media.service';
-
-import { ActivatedRoute } from '@angular/router';
-import { MediaItemService } from './media-item.service';
+import { MediaItemService } from './service/media-item.service';
 
 @Component({
   selector: 'mw-media-item-list',

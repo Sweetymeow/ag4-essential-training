@@ -24,6 +24,8 @@ System.register(["@angular/core", "./service/media.service"], function (exports_
             MediaItemListComponent = class MediaItemListComponent {
                 constructor(mediaService) {
                     this.mediaService = mediaService;
+                    this.medium = '';
+                    this.mediaItems = [];
                 }
                 getMedidaData() {
                     this.mediaService.getMediaItems().then(mediaItems => this.mediaItems = mediaItems);
@@ -31,7 +33,22 @@ System.register(["@angular/core", "./service/media.service"], function (exports_
                 ngOnInit() {
                     this.getMedidaData();
                 }
-                onMediaItemDelete(mediaItem) {
+                // onMediaItemDelete(mediaItem) { }
+                // constructor(
+                //   private mediaItemService: MediaItemService,
+                //   private activatedRoute: ActivatedRoute) {}
+                // ngOnInit() {
+                //   this.paramsSubscription = this.activatedRoute.params
+                //     .subscribe(params => {
+                //       let medium = params['medium'];
+                //       if(medium.toLowerCase() === 'all') {
+                //         medium = '';
+                //       }
+                //       this.getMediaItems(medium);
+                //     });
+                // }
+                ngOnDestroy() {
+                    this.paramsSubscription.unsubscribe();
                 }
             };
             MediaItemListComponent = __decorate([

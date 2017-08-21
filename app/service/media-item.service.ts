@@ -14,12 +14,12 @@ export class MediaItemService {
         return response.json().mediaItems;
       });
   }
-  
+
   add(mediaItem) {
     return this.http.post('mediaitems', mediaItem)
       .map(response => {});
   }
-  
+
   delete(mediaItem) {
     return this.http.delete(`mediaitems/${mediaItem.id}`)
       .map(response => {});

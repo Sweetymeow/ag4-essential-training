@@ -22,15 +22,28 @@ System.register(["@angular/core", "@angular/forms"], function (exports_1, contex
         ],
         execute: function () {
             MwMediaItemFormComponent = class MwMediaItemFormComponent {
-                constructor() { }
+                // OPTION 1
+                // constructor( @Inject(FormBuilder) fb : FormBuilder ) {
+                //   this.mdForm = fb.group({
+                //     medium: fb.control('Movies'),
+                //     category: fb.control(''),
+                //     name: fb.control('', [ Validators.required, Validators.pattern('[\\w\\-\\s\\/]+')]),
+                //     year: fb.control('', [ Validators.required, this.yearValidator])
+                //   });
+                // } // OPTION 1
+                constructor(formBuilder) {
+                    this.formBuilder = formBuilder;
+                } // OPTION 2
+                // formBuilder: FormBuilder; // OPTION 3
+                // constructor(formBuilder : FormBuilder) { this.formBuilder = formBuilder; } // OPTION 3
                 ngOnInit() {
-                    this.mdForm = new forms_1.FormGroup({
-                        medium: new forms_1.FormControl('Movies'),
-                        category: new forms_1.FormControl(''),
-                        name: new forms_1.FormControl('', [forms_1.Validators.required, forms_1.Validators.pattern('[\\w\\-\\s\\/]+')]),
-                        year: new forms_1.FormControl('', [forms_1.Validators.required, this.yearValidator])
+                    this.mdForm = this.formBuilder.group({
+                        medium: this.formBuilder.control('Movies'),
+                        category: this.formBuilder.control(''),
+                        name: this.formBuilder.control('', [forms_1.Validators.required, forms_1.Validators.pattern('[\\w\\-\\s\\/]+')]),
+                        year: this.formBuilder.control('', [forms_1.Validators.required, this.yearValidator])
                     });
-                }
+                } // OPTION 2 / 3
                 yearValidator(control) {
                     if (control.value.trim().length === 0) {
                         // check if the value's empty return null - Valid
@@ -60,7 +73,7 @@ System.register(["@angular/core", "@angular/forms"], function (exports_1, contex
                     templateUrl: 'app/media-item-form.component.html',
                     styleUrls: ['app/media-item-form.component.css']
                 }),
-                __metadata("design:paramtypes", [])
+                __metadata("design:paramtypes", [forms_1.FormBuilder])
             ], MwMediaItemFormComponent);
             exports_1("MwMediaItemFormComponent", MwMediaItemFormComponent);
         }

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'mw-media-item-form',
@@ -8,18 +8,29 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 
 export class MwMediaItemFormComponent {
-  constructor() {  }
+  mdForm: FormGroup;
 
-  mdForm;
+  // OPTION 1
+  // constructor( @Inject(FormBuilder) fb : FormBuilder ) {
+  //   this.mdForm = fb.group({
+  //     medium: fb.control('Movies'),
+  //     category: fb.control(''),
+  //     name: fb.control('', [ Validators.required, Validators.pattern('[\\w\\-\\s\\/]+')]),
+  //     year: fb.control('', [ Validators.required, this.yearValidator])
+  //   });
+  // } // OPTION 1
+  constructor(private formBuilder : FormBuilder) {  } // OPTION 2
+  // formBuilder: FormBuilder; // OPTION 3
+  // constructor(formBuilder : FormBuilder) { this.formBuilder = formBuilder; } // OPTION 3
 
   ngOnInit(){
-    this.mdForm = new FormGroup({
-      medium: new FormControl('Movies'),
-      category: new FormControl(''),
-      name: new FormControl('', [ Validators.required, Validators.pattern('[\\w\\-\\s\\/]+')]),
-      year: new FormControl('', [ Validators.required, this.yearValidator])
+    this.mdForm = this.formBuilder.group({
+      medium: this.formBuilder.control('Movies'),
+      category: this.formBuilder.control(''),
+      name: this.formBuilder.control('', [ Validators.required, Validators.pattern('[\\w\\-\\s\\/]+')]),
+      year: this.formBuilder.control('', [ Validators.required, this.yearValidator])
     });
-  }
+  } // OPTION 2 / 3
 
   yearValidator(control){
     if(control.value.trim().length === 0){
