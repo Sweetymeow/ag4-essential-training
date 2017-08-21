@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const forms_1 = require("@angular/forms");
+const media_item_service_1 = require("./service/media-item.service");
 let MwMediaItemFormComponent = class MwMediaItemFormComponent {
     // OPTION 1
     // constructor( @Inject(FormBuilder) fb : FormBuilder ) {
@@ -21,8 +22,9 @@ let MwMediaItemFormComponent = class MwMediaItemFormComponent {
     //     year: fb.control('', [ Validators.required, this.yearValidator])
     //   });
     // } // OPTION 1
-    constructor(formBuilder) {
+    constructor(formBuilder, mediaItemService) {
         this.formBuilder = formBuilder;
+        this.mediaItemService = mediaItemService;
     } // OPTION 2
     // formBuilder: FormBuilder; // OPTION 3
     // constructor(formBuilder : FormBuilder) { this.formBuilder = formBuilder; } // OPTION 3
@@ -53,8 +55,8 @@ let MwMediaItemFormComponent = class MwMediaItemFormComponent {
                 } };
         }
     }
-    onSubmit(mediaForm) {
-        console.log(mediaForm);
+    onSubmit(mediaItem) {
+        this.mediaItemService.add(mediaItem);
     }
 };
 MwMediaItemFormComponent = __decorate([
@@ -63,7 +65,8 @@ MwMediaItemFormComponent = __decorate([
         templateUrl: 'app/media-item-form.component.html',
         styleUrls: ['app/media-item-form.component.css']
     }),
-    __metadata("design:paramtypes", [forms_1.FormBuilder])
+    __metadata("design:paramtypes", [forms_1.FormBuilder,
+        media_item_service_1.MediaItemService])
 ], MwMediaItemFormComponent);
 exports.MwMediaItemFormComponent = MwMediaItemFormComponent;
 //# sourceMappingURL=media-item-form.component.js.map

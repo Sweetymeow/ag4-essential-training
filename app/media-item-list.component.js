@@ -11,19 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const media_service_1 = require("./service/media.service");
+const media_item_service_1 = require("./service/media-item.service");
 let MediaItemListComponent = class MediaItemListComponent {
-    constructor(mediaService) {
-        this.mediaService = mediaService;
+    // constructor(private mediaService : MediaService){}
+    constructor(mediaItemService) {
+        this.mediaItemService = mediaItemService;
         this.medium = '';
         this.mediaItems = [];
     }
-    getMedidaData() {
-        this.mediaService.getMediaItems().then(mediaItems => this.mediaItems = mediaItems);
-    }
+    // getMedidaData(): void {
+    //   this.mediaService.getMediaItems().then(mediaItems => this.mediaItems = mediaItems);
+    // }
     ngOnInit() {
-        this.getMedidaData();
+        // this.getMedidaData();
+        this.mediaItems = this.mediaItemService.get();
     }
-    // onMediaItemDelete(mediaItem) { }
+    onMediaItemDelete(mediaItem) {
+        this.mediaItemService.delete(mediaItem);
+    }
     // constructor(
     //   private mediaItemService: MediaItemService,
     //   private activatedRoute: ActivatedRoute) {}
@@ -48,7 +53,7 @@ MediaItemListComponent = __decorate([
         styleUrls: ['app/media-item-list.component.css'],
         providers: [media_service_1.MediaService]
     }),
-    __metadata("design:paramtypes", [media_service_1.MediaService])
+    __metadata("design:paramtypes", [media_item_service_1.MediaItemService])
 ], MediaItemListComponent);
 exports.MediaItemListComponent = MediaItemListComponent;
 //# sourceMappingURL=media-item-list.component.js.map

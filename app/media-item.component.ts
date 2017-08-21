@@ -6,6 +6,7 @@ import { media } from './data/media';
   templateUrl: 'app/media-item.component.html',
   styleUrls: ['app/media-item.component.css']
 })
+
 export class MediaItemComponent {
   @Input() mediaItem : media[];
   @Output() delete = new EventEmitter();

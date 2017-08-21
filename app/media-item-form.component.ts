@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { media } from './data/media';
+import { MediaItemService } from './service/media-item.service';
 
 @Component({
   selector: 'mw-media-item-form',
@@ -19,7 +21,8 @@ export class MwMediaItemFormComponent {
   //     year: fb.control('', [ Validators.required, this.yearValidator])
   //   });
   // } // OPTION 1
-  constructor(private formBuilder : FormBuilder) {  } // OPTION 2
+  constructor( private formBuilder : FormBuilder,
+  private mediaItemService : MediaItemService ) {  } // OPTION 2
   // formBuilder: FormBuilder; // OPTION 3
   // constructor(formBuilder : FormBuilder) { this.formBuilder = formBuilder; } // OPTION 3
 
@@ -52,7 +55,7 @@ export class MwMediaItemFormComponent {
     }
   }
 
-  onSubmit(mediaForm : FormGroup){
-    console.log(mediaForm);
+  onSubmit(mediaItem : media){ //mediaForm : FormGroup
+    this.mediaItemService.add(mediaItem);
   }
 }

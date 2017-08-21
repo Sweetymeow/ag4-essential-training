@@ -18,17 +18,21 @@ export class MediaItemListComponent {
   paramsSubscription:any;
   myFarItem: media;
 
-  constructor(private mediaService : MediaService){}
+  // constructor(private mediaService : MediaService){}
+  constructor(private mediaItemService : MediaItemService){}
 
-  getMedidaData(): void {
-    this.mediaService.getMediaItems().then(mediaItems => this.mediaItems = mediaItems);
-  }
+  // getMedidaData(): void {
+  //   this.mediaService.getMediaItems().then(mediaItems => this.mediaItems = mediaItems);
+  // }
 
   ngOnInit(): void {
-    this.getMedidaData();
+    // this.getMedidaData();
+    this.mediaItems = this.mediaItemService.get();
   }
 
-  // onMediaItemDelete(mediaItem) { }
+  onMediaItemDelete(mediaItem : media) {
+    this.mediaItemService.delete(mediaItem);
+  }
 
   // constructor(
   //   private mediaItemService: MediaItemService,
