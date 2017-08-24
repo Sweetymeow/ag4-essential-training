@@ -47,7 +47,8 @@ AppModule = __decorate([
         ],
         providers: [
             media_item_service_1.MediaItemService,
-            { provide: providers_1.lookupListToken, useValue: providers_1.lookupLists },
+            { provide: 'lookupListToken', useValue: providers_1.lookupLists },
+            // { provide: lookupListToken, useValue: lookupLists },
             { provide: http_1.XHRBackend, useClass: mock_xhr_backend_1.MockXHRBackend }
         ],
         bootstrap: [
